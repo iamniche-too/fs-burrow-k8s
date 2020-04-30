@@ -9,6 +9,9 @@ data:
     pidfile="burrow.pid"
     #stdout-logfile="burrow.out"
 
+    [logging]
+    level="debug"
+
     # logs to stdout by default
     #[logging]
     #filename="logs/burrow.log"
@@ -21,18 +24,29 @@ data:
 
     [zookeeper]
     servers=[ "zookeeper-0.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-1.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-2.zookeeper-service.kafka.svc.cluster.local:2181" ]
+    #root-path="/burrow"
     timeout=6
+
+    [client-profile.test]
+    client-id="burrow-test"
+    kafka-version="2.0.1"
+    #sasl="mysasl"
+
+    [sasl.mysasl]
+    #username="burrow"
+    #password="burrow"
+    handshake-first=true
 
     [cluster.mykafka]
     class-name="kafka"
-    servers=[ "kafka0.kafka-service.kafka.svc.cluster.local:9092", "kafka1.kafka-service.kafka.svc.cluster.local:9092", "kafka2.kafka-service.kafka.svc.cluster.local:9092" ]
-    topic-refresh=60
-    offset-refresh=30
+    servers=[ "internal-service-0.kafka.svc.cluster.local:9092", "internal-service-1.kafka.svc.cluster.local:9092", "internal-service-2.kafka.svc.cluster.local:9092" ]
+    topic-refresh=120
+    offset-refresh=20
 
     [consumer.myconsumer]
     class-name="kafka"
     cluster="mykafka"
-    servers=[ "kafka0.kafka-service.kafka.svc.cluster.local:9092", "kafka1.kafka-service.kafka.svc.cluster.local:9092", "kafka2.kafka-service.kafka.svc.cluster.local:9092" ]
+    servers=[ "internal-service-0.kafka.svc.cluster.local:9092", "internal-service-1.kafka.svc.cluster.local:9092", "internal-service-2.kafka.svc.cluster.local:9092" ]
     client-profile="test"
     group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
     group-whitelist=""
