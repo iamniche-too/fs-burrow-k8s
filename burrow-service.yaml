@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: burrow
+  namespace: producer-consumer 
+spec:
+  type: LoadBalancer
+  selector:
+    app: burrow
+  ports:
+  - name: web
+    protocol: TCP
+    port: 80
+  - name: api
+    protocol: TCP
+    port: 8000
