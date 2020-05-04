@@ -2,4 +2,4 @@
 source ./export-gcp-credentials.sh
 ./generate-cluster-connection-yaml.sh
 
-kubectl -n producer-consumer logs $1 --kubeconfig ./kubeconfig.yaml
+kubectl -n kafka logs $1 --kubeconfig ./kubeconfig.yaml
