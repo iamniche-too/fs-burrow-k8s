@@ -53,12 +53,12 @@ data:
     group-whitelist=".*"
 
     #[consumer.zk]
-    #class-name="kafka_zk"
-    #cluster="mykafka"
-    #servers=[ "zookeeper-0.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-1.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-2.zookeeper-service.kafka.svc.cluster.local:2181" ]
-    #zookeeper-timeout=30
+    class-name="kafka_zk"
+    cluster="mykafka"
+    servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
+    zookeeper-timeout=30
     #group-blacklist=""
-    #group-whitelist=""
+    group-whitelist=".*"
 
     [httpserver.default]
     address=":8000"
