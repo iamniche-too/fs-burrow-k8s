@@ -52,7 +52,7 @@ data:
     #group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
     group-whitelist=".*"
 
-    #[consumer.zk]
+    [consumer.zk]
     class-name="kafka_zk"
     cluster="mykafka"
     servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
