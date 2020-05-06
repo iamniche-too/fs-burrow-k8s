@@ -23,7 +23,7 @@ data:
     #use-compression=true
 
     [zookeeper]
-    servers=[ "zookeeper-0.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-1.zookeeper-service.kafka.svc.cluster.local:2181", "zookeeper-2.zookeeper-service.kafka.svc.cluster.local:2181" ]
+    servers=[ "zookeeper-0.kafka-service:2181", "zookeeper-1.kafka-service:2181", "zookeeper-2.kafka-service:2181" ]
     #root-path="/burrow"
     timeout=6
 
@@ -39,14 +39,14 @@ data:
 
     [cluster.mykafka]
     class-name="kafka"
-    servers=[ "internal-service-0.kafka.svc.cluster.local:9092", "internal-service-1.kafka.svc.cluster.local:9092", "internal-service-2.kafka.svc.cluster.local:9092" ]
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
     topic-refresh=120
     offset-refresh=20
 
     [consumer.myconsumer]
     class-name="kafka"
     cluster="mykafka"
-    servers=[ "internal-service-0.kafka.svc.cluster.local:9092", "internal-service-1.kafka.svc.cluster.local:9092", "internal-service-2.kafka.svc.cluster.local:9092" ]
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
     client-profile="test"
     #group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
     group-whitelist=".*"
