@@ -29,7 +29,8 @@ data:
 
     [client-profile.test]
     client-id="burrow-test"
-    kafka-version="2.1.2"
+    #kafka-version="2.1.2"
+    kafka-version="2.0.1"
     #sasl="mysasl"
 
     #[sasl.mysasl]
