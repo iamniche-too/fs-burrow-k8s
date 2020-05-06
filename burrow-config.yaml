@@ -32,10 +32,10 @@ data:
     kafka-version="2.0.1"
     #sasl="mysasl"
 
-    [sasl.mysasl]
+    #[sasl.mysasl]
     #username="burrow"
     #password="burrow"
-    handshake-first=true
+    #handshake-first=true
 
     [cluster.mykafka]
     class-name="kafka"
@@ -48,8 +48,8 @@ data:
     cluster="mykafka"
     servers=[ "internal-service-0.kafka.svc.cluster.local:9092", "internal-service-1.kafka.svc.cluster.local:9092", "internal-service-2.kafka.svc.cluster.local:9092" ]
     client-profile="test"
-    group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
-    group-whitelist=""
+    #group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
+    group-whitelist=".*"
 
     #[consumer.zk]
     #class-name="kafka_zk"
