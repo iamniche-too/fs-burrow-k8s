@@ -29,8 +29,8 @@ data:
 
     [client-profile.test]
     client-id="burrow-test"
-    #kafka-version="2.0.1"
-    kafka-version="1.1.1"
+    kafka-version="2.0.1"
+    #kafka-version="1.1.1"
     #sasl="mysasl"
 
     #[sasl.mysasl]
@@ -49,8 +49,8 @@ data:
     cluster="mykafka"
     servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
     client-profile="test"
-    #group-blacklist="^(console-consumer-|python-kafka-consumer-|quick-).*$"
-    group-whitelist=".*"
+    #group-blacklist=""
+    #group-whitelist=".*"
 
     [consumer.zk]
     class-name="kafka_zk"
@@ -58,7 +58,7 @@ data:
     servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
     zookeeper-timeout=30
     #group-blacklist=""
-    group-whitelist=".*"
+    #group-whitelist=".*"
 
     [httpserver.default]
     address=":8000"
