@@ -23,7 +23,8 @@ spec:
                 values: ["true"]
       containers:
       - name: burrow
-        image: solsson/burrow
+        # IMPORTANT NOTE: needs to be built from master
+        image: nichemley/fs-burrow
         ports:
         - name: api
           containerPort: 8000
