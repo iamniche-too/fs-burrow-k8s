@@ -40,6 +40,7 @@ data:
 
     [cluster.mykafka]
     class-name="kafka"
+    client-profile="test"
     servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
     topic-refresh=120
     offset-refresh=20
