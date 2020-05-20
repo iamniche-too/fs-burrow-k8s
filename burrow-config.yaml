@@ -41,14 +41,14 @@ data:
     [cluster.mykafka]
     class-name="kafka"
     client-profile="test"
-    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
     topic-refresh=120
     offset-refresh=20
 
     [consumer.myconsumer]
     class-name="kafka"
     cluster="mykafka"
-    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-0.kafka-service:9092" ]
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
     client-profile="test"
     #group-blacklist=""
     #group-whitelist=".*"
