@@ -24,7 +24,7 @@ data:
 
     [zookeeper]
     # 3 ZKs
-    servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
+    # servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
     # 1 ZK
     servers=[ "zookeeper-0.zookeeper-service:2181"]
     #root-path="/burrow"
