@@ -23,7 +23,10 @@ data:
     #use-compression=true
 
     [zookeeper]
+    # 3 ZKs
     servers=[ "zookeeper-0.zookeeper-service:2181", "zookeeper-1.zookeeper-service:2181", "zookeeper-2.zookeeper-service:2181" ]
+    # 1 ZK
+    servers=[ "zookeeper-0.zookeeper-service:2181"]
     #root-path="/burrow"
     timeout=6
 
@@ -41,14 +44,20 @@ data:
     [cluster.mykafka]
     class-name="kafka"
     client-profile="test"
-    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
+    # 5 brokers
+    # servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
+    # 3 brokers
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092"]
     topic-refresh=120
     offset-refresh=20
 
     [consumer.myconsumer]
     class-name="kafka"
     cluster="mykafka"
-    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
+    # 5 brokers
+    # servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092", "kafka-3.kafka-service:9092", "kafka-4.kafka-service:9092"]
+    # 3 brokers
+    servers=[ "kafka-0.kafka-service:9092", "kafka-1.kafka-service:9092", "kafka-2.kafka-service:9092"]
     client-profile="test"
     #group-blacklist=""
     #group-whitelist=".*"
